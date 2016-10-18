@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import fuelSavings from './fuelSavingsReducer';
+import todos from './todoReducer';
+import visibilityFilter from './visibilityFilterReducer';
 import {routerReducer} from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  fuelSavings,
+  todos,
+  visibilityFilter,
   routing: routerReducer
 });
 
