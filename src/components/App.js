@@ -31,7 +31,7 @@ class App extends React.Component {
         <div className="container has-padding-horizontal-1">
           <AddTodos />
           <ListTodos todos={this.props.todos} toggleTodo={this.toggleTodo} />
-          <FilterTodos active={this.props.filter} />
+          <FilterTodos />
         </div>
       </div>
     );
@@ -40,7 +40,6 @@ class App extends React.Component {
 
 App.propTypes = {
   todos: PropTypes.array,
-  filter: PropTypes.string,
   actions: PropTypes.object.isRequired
 };
 
@@ -65,6 +64,7 @@ function filterTodosByVisibility(todos, filter){
  * @return {Object}           mapped object with store properties
  */
 function mapStateToProps(state, ownProps) {
+  // Filter todos by visibilityFilter
   let todos = state.todos,
   filter = ownProps.location.pathname;
   if(filter !== '/'){
@@ -72,8 +72,7 @@ function mapStateToProps(state, ownProps) {
   }
 
   return {
-    todos,
-    filter
+    todos
   };
 }
 

@@ -1,5 +1,7 @@
 @import "node_modules/bulma/bulma.sass";
 
+$is-primary: #00d1b2;
+
 .has-padding-1 { padding: 1em }
 .has-padding-vertical-1 { padding-top: 1em; padding-bottom: 1em }
 .has-padding-horizontal-1 { padding-left: 1em; padding-right: 1em }
@@ -9,3 +11,39 @@
 .has-hand-cursor { cursor: pointer; }
 
 .Link-active { color: #333; }
+
+.fa-check-square-o { color: $is-primary; }
+.todo-line { animation: slideUp 0.5s ease; }
+
+/**************
+ * Animations *
+ **************/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform:translate(0, -1em);
+  }
+  100% {
+    opacity: 1;
+    transform:translate(0);
+  }
+}

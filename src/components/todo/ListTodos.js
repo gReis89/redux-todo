@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react';
  */
 const ListTodos = ({todos, toggleTodo}) => {
   let todoList = todos.map(todo => {
-    return (<li className="box has-hand-cursor" key={todo.id} onClick={()=>toggleTodo(todo)}>
+    return (<li className="box has-hand-cursor todo-line" key={todo.id} onClick={()=>toggleTodo(todo)}>
       {todo.completed ? <i className="fa fa-check-square-o" /> : <i className="fa fa-square-o" /> }
       &nbsp;
       {todo.text}
