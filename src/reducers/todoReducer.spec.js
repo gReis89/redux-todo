@@ -7,8 +7,10 @@ describe('Reducers::Todo', () => {
     const stateBefore = [];
     const action = {
       type: 'ADD_TODO',
-      id: 0,
-      text: 'Learn Redux'
+      todo: {
+        id: 0,
+        text: 'Learn Redux'
+      }
     };
     const stateAfter = [
       {
@@ -38,7 +40,9 @@ describe('Reducers::Todo', () => {
     ];
     const action = {
       type: 'TOGGLE_TODO',
-      id: 1
+      todo: {
+        id: 0
+      }
     };
     const stateAfter = [
       {

@@ -26,6 +26,8 @@
   "author": "guilherme.r89@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "bulma": "0.2.3",
+    "node-uuid": "1.4.7",
     "object-assign": "4.1.0",
     "react": "15.3.1",
     "react-dom": "15.3.1",

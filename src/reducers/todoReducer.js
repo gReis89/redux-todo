@@ -1,4 +1,5 @@
 import {ADD_TODO, TOGGLE_TODO} from '../constants/actionTypes';
+import initialState from './initialState';
 
 /**
  * Todos main reducer function
@@ -6,7 +7,7 @@ import {ADD_TODO, TOGGLE_TODO} from '../constants/actionTypes';
  * @param  {Object} action    Action to be applied to the state
  * @return {Array}            New immutable state
  */
-export default function todos(state=[], action) {
+export default function todos(state=initialState.todos, action) {
   switch (action.type){
     case ADD_TODO:
       return [
@@ -35,15 +36,15 @@ const todo = (state, action) => {
         completed: false
       };
     case TOGGLE_TODO:
-      if(state.id !== action.todo.id){
+      if(state.id === action.todo.id){
         return state;
       }
+
       return {
         ...state,
         completed: !state.completed
       };
     default:
       return state;
-
   }
 };
