@@ -57,8 +57,10 @@ class AddTodos extends React.Component {
    * Add new todo calling a redux action
    */
   addTodo() {
-    this.props.actions.addTodo(this.state.todo);
-    this.clearInputField();
+    if(this.state.todo.text.length){
+      this.props.actions.addTodo(this.state.todo);
+      this.clearInputField();
+    }
   }
 
   /**

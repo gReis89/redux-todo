@@ -48,12 +48,12 @@ describe('Reducers::Todo', () => {
       {
         id: 0,
         text: 'Study',
-        completed: false
+        completed: true
       },
       {
         id: 1,
         text: 'Fed the fod',
-        completed: true
+        completed: false
       }
     ];
 
