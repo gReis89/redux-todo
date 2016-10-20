@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as todosActions from '../actions/todosActions';
+import * as todosActions from '../../actions/todosActions';
 
 /**
  * AddTodos React Component connected via react-redux

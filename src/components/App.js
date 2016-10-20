@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as todosActions from '../actions/todosActions';
-import AddTodos from './AddTodos';
-import ListTodos from './ListTodos';
-import FilterTodos from './FilterTodos';
-import Header from './Header';
+import AddTodos from './todo/AddTodos';
+import ListTodos from './todo/ListTodos';
+import FilterTodos from './todo/FilterTodos';
+import Header from './layout/Header';
 
 /**
  * Main React Component
