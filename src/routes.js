@@ -5,8 +5,7 @@ import App from './components/App';
 
 export default (
   <Route path="/" component={App}>
-    <Route path="all" />
-    <Route path="todo" />
-    <Route path="completed" />
+    <Route path="/active" />
+    <Route path="/completed" />
   </Route>
 );

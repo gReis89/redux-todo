@@ -17,8 +17,10 @@ class App extends React.Component {
     this.toggleTodo = this.toggleTodo.bind(this);
   }
 
+  /**
+   * set todo to completed or not
+   */
   toggleTodo(todo) {
-    console.log(todo);
     this.props.actions.toggleTodo(todo);
   }
 
@@ -29,7 +31,7 @@ class App extends React.Component {
         <div className="container has-padding-horizontal-1">
           <AddTodos />
           <ListTodos todos={this.props.todos} toggleTodo={this.toggleTodo} />
-          <FilterTodos />
+          <FilterTodos active={this.props.filter} />
         </div>
       </div>
     );
@@ -38,17 +40,40 @@ class App extends React.Component {
 
 App.propTypes = {
   todos: PropTypes.array,
+  filter: PropTypes.string,
   actions: PropTypes.object.isRequired
 };
 
 /**
- * Map state from redux store to component properties
- * @param  {Object} state Redux store state
- * @return {Object}       mapped object with store properties
+ * Filter todos list by visibility
+ * @param  {Array} todos    list of todos
+ * @param  {String} filter  string representing the visibility filter
+ * @return {Array}          new list of filtered todos
  */
-function mapStateToProps(state) {
+function filterTodosByVisibility(todos, filter){
+  if(filter === '/completed'){
+    return todos.filter(t => t.completed);
+  } else {
+    return todos.filter(t => !t.completed);
+  }
+}
+
+/**
+ * Map state from redux store to component properties
+ * @param  {Object} state     Redux store state
+ * @param  {Object} ownProps  injected by redux
+ * @return {Object}           mapped object with store properties
+ */
+function mapStateToProps(state, ownProps) {
+  let todos = state.todos,
+  filter = ownProps.location.pathname;
+  if(filter !== '/'){
+    todos = filterTodosByVisibility(todos,filter);
+  }
+
   return {
-    todos: state.todos
+    todos,
+    filter
   };
 }
 
