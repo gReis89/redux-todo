@@ -27,6 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "bulma": "0.2.3",
+    "lodash": "4.16.4",
     "node-uuid": "1.4.7",
     "object-assign": "4.1.0",
     "react": "15.3.1",
